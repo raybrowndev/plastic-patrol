@@ -1,7 +1,8 @@
 import pygame
+from pygame.sprite import Sprite
 from random import randint
 
-class Plastic():
+class Plastic(Sprite):
 
     def __init__(self, game):
 
@@ -17,7 +18,7 @@ class Plastic():
         self.y = float(self.rect.y)
 
     def update(self): 
-        self.y -= self.settings.obstacle_speed
+        self.y -= self.settings.plastic_speed
         self.rect.y = self.y
 
     def draw_plastic(self):

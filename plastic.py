@@ -11,13 +11,14 @@ class Plastic(Sprite):
         self.settings = game.settings
         self.screen_rect = game.screen.get_rect()
         self.image = pygame.image.load('assets/water-bottle.png')
-        self.rect = self.image.get_rect()  
+        self.image = pygame.transform.scale(self.image, (50, 50))
+        self.rect = self.image.get_rect()
 
         #Where does it pop?
-        self.rect.midtop = (randint(0,900), 0) #double-check if it should be midtop or something else
+        self.rect.midtop = (randint(0,560), 0) #double-check if it should be midtop or something else
         self.y = float(self.rect.y)
 
-    def update(self): 
+    def update(self):
         self.y -= self.settings.plastic_speed
         self.rect.y = self.y
 

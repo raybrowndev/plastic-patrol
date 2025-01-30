@@ -14,6 +14,7 @@ class PlasticPatrol:
         self.clock = pygame.time.Clock()
         self.plastic = pygame.sprite.Group()
         self.net = Net(self)
+        self.background = pygame.transform.scale(pygame.image.load('assets/underwater.png'),(self.settings.SCREEN_WIDTH,self.settings.SCREEN_HEIGHT))
 
 
     def run_game(self):
@@ -29,8 +30,11 @@ class PlasticPatrol:
     # ...
 
             self.screen.fill("blue")  # Fill the display with a solid color
+            self.screen.blit(self.background,game.screen.get_rect())
             plastic = Plastic(self)
             plastic.draw_plastic()
+            
+            
 
     # Render the graphics here.
     # ...
